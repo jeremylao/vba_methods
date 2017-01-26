@@ -1,16 +1,21 @@
 Sub uniqueness()
 
-    Dim name_table(100) As String
+    Dim name_table(500) As String
     Dim count As Integer
     Dim next_cell As Range
     Dim temp As String
     Dim flag As Integer
+    Dim user_input As Range
+    Dim user_output As Range
+    
+    Set user_input = Application.InputBox("Beginning of Input Range", "Beginning of Input Range", Type:=8)
+    Set user_output = Application.InputBox("Choose Output Range", "Choose Output Range", Type:=8)
     
     
     count = 0
     flag = 0
     
-    Range("B5").Select
+    user_input.Select
     
     Set next_cell = ActiveCell.Offset(1, 0)
     
@@ -46,7 +51,7 @@ Sub uniqueness()
                          
     Wend
     
-    Range("D5").Select
+    user_output.Select
     
     'ActiveCell.Resize(6, 1) = name_table
     
@@ -57,6 +62,3 @@ Sub uniqueness()
       
 
 End Sub
-                        
-                        
-
