@@ -2,8 +2,8 @@ Sub regex_finder()
 
     Dim regEx_1 As New RegExp
     Dim regEx_2 As New RegExp
-    Dim case_one As String: case_one = "[Ss][^KkIi]*[Kk][^SsIi]*[Ii][^SsKk]*"
-    Dim case_two As String: case_two = "[Aa]"
+    Dim case_one As String: case_one = "[Hh][^OoDd]*[Oo][^HhDd]*[Dd][^HhOo]*"
+    Dim case_two As String: case_two = "[Mm]"
     Dim str_input As String
     Dim str_input_2 As String
     
@@ -11,7 +11,13 @@ Sub regex_finder()
     Dim range_number As Integer
     Dim count As Integer
     Dim two_case_flag As Integer
-        
+    Dim user_output As Range
+    
+    Set user_output = Application.InputBox("Select Output Range", "Select Output Range", Type:=8)
+    
+    case_one = Application.InputBox("Input RegEx", "Input Expression", Type:=2)
+    case_two = Application.InputBox("Input RegEx, #2", "Input Expression", Type:=2)
+    
     two_case_flag = 1
     Range("G2").Activate  'The beginning of the range of cells where the data is contained
     str_pattern = ""
@@ -66,7 +72,7 @@ Sub regex_finder()
         
     Next i
     
-    Range("P97").Activate   'Location where you want to print out the results, will print horizontal
+   user_output.Activate   'Location where you want to print out the results, will print horizontal
     
     For i = 0 To count
     
