@@ -2,11 +2,14 @@ Sub remove_empty_lines()
     
     Dim flag As Integer
     Dim counter As Integer
+    Dim user_input As Range
+    
+    Set user_input = Application.InputBox("Beginning of Input Range", "Beginning of Input Range", Type:=8)
     
     flag = 500
     counter = 0
     
-    Range("A2").Activate
+    user_input.Activate
     
     While counter < flag
     
