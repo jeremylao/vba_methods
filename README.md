@@ -1,2 +1,2 @@
 # vba_methods
-place to store VBA methods I've written
+working folder: a place to store some helpful VBA methods
